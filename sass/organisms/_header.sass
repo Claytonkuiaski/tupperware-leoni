@@ -1,0 +1,85 @@
+header
+	position: relative 
+	z-index: 999
+	margin-top: 0
+	.topo
+		box-shadow: 0 0 40px
+		padding-top: 10px
+		background: rgba(255, 255, 255, 0.4)
+		.toggle
+			display: none 
+			float: right
+			margin-top: 30px
+			a 
+				font-size: 40px 
+				color: $preto
+			+breakpoint($tablet)
+				display: block	
+		.menu
+			+flexbox
+			+justify-content(space-between)
+			+align-items(center)
+			+breakpoint($tablet)
+				display: block 
+				ul 
+					display: none
+			.logo
+				img
+					width: 300px
+				.nome
+					width: 200px
+					margin-left: 150px	
+					margin-top: -20px
+				+breakpoint($tablet)
+					img 
+						+img-responsive
+						margin: 0 auto	
+					.nome 
+						margin: 0 auto
+						width: 300px
+			ul 	
+				white-space: nowrap
+				li 
+					display: inline
+					padding-right: 30px
+					a 
+						color: $preto
+						font-weight: 600
+						+transition(.2s)
+						&:hover
+							opacity: .8
+
+.menu-responsivo
+	z-index: 99999
+	position: fixed
+	width: 100%
+	height: 0
+	left: 0
+	top: -315px
+	+transition(.2s)
+	&.ativo 
+		top: 0
+	
+	ul 
+		margin-top: 0px
+		margin-left: -50px
+		list-style: none
+		text-align: center
+		background-color: $preto
+		li 
+			a
+				font-size: 40px
+				padding: 10px
+				display: block
+				color: $branco
+				border-bottom: solid 1px $branco
+				+transition(.2s)
+				&:hover,
+				&:focus
+					background-color: $branco 
+					color: $preto
+					border-botom: solid 1px $preto
+.layout
+	+transition(.2s)
+	&.ativo 
+		padding-top: 240px										
